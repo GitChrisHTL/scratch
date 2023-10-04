@@ -27,4 +27,5 @@ jobs:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '17'
       - name: run helloWorldApp.java
+        run: javac helloWorldApp.java
         run: java helloWorldApp
