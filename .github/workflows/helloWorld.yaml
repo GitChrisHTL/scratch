@@ -1,0 +1,15 @@
+name: Build Hello World
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v3
+          with:
+            distribution: 'zulu' # See 'Supported distributions' for available options
+            java-version: '17'
+        - name: run helloWorldApp.java
+          run: java helloWorldApp.java
