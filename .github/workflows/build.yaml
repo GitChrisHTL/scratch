@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "hello, world\n" > demo.txt
           pwd
-          ls-l
+          ls -l
 
   deploy:
     needs:
