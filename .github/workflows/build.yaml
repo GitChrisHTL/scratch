@@ -5,6 +5,7 @@ on: [push]
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -28,3 +29,22 @@ jobs:
           java-version: '17'
       - name: show java version
         run: java -version
+
+  docs:
+    name: documentation
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Hello
+        run: |
+          echo "hello, world\n" > demo.txt
+          pwd
+          ls-l
+
+  deploy:
+    needs:
+      - build
+      - documentation
+
+    runs-on: ubuntu-22.04  
+    steps:
+      - run: echo "done"            
