@@ -53,4 +53,12 @@ jobs:
 
     runs-on: ubuntu-22.04  
     steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+
+      - run: |
+          pwd
+          ls -l    
       - run: echo "done"            
